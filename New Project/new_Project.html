@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Project</title>
+  <link rel="stylesheet" href="./CSS/new_project.css">
+</head>
+
+<body>
+  <div class="header"> <span class="span1">CONF</span> <span class="span2">NET</span> </div>
+
+  <div class="toolbar">
+    <img src="./imgs/Rectangle 6.png" alt="" class="rectangle6">
+    <img src="./imgs/Rectangle 7.png" alt="" class="rectangle7">
+    <img src="./imgs/Rectangle 8.png" alt="" class="rectangle8">
+    <img src="./imgs/Rectangle 6.png" alt="" class="rectangle66">
+    <img src="./imgs/Rectangle 7.png" alt="" class="rectangle77">
+    <img src="./imgs/Rectangle 8.png" alt="" class="rectangle88">
+    <div class="container">
+      <img src="./imgs/router 1.png" alt="router" draggable="false"  class="device"  id="router">
+      <div class="hover-list" id="hover-list">
+        <center>
+          <h5>R1</h5>
+          <img src="./imgs/router 1.png" title="Router 1" alt="router" class="device" draggable="true" id="router1" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+          <hr>
+          <h5 >R2</h5>
+          <img src="./imgs/router 1.png" title="Router 2" alt="router" class="device" draggable="true" id="router2" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+          <hr>
+          <h5>R3</h5>
+        <img src="./imgs/router 1.png" title="Router 3" alt="router" class="device" draggable="true" id="router3" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+      </center>
+      </div>
+    </div>    <img src="./imgs/layer-2-remote-switch 1.png" alt="switchL2" class="device" draggable="true" id="switch2" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+    <img src="./imgs/layer-3-switch 1.png" alt="switchL3" class="device" draggable="true" id="switch3" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+    <img src="./imgs/pc 1.png" alt="pc" class="device" draggable="true" id="pc" onclick="selectElement(event)" , onmousedown="startDrag(event, this)">
+    <img src="./imgs/network-cable 1.png" alt="cable" class="device" draggable="true" id="cable">
+  </div>
+  <!-- ======================================================== -->
+
+  <div class="workspace" id="workspace">
+    <!--Cable on click  -->
+    <div class="Cable-on-click " id="Cable-clicked">
+      <h2>Connection</h2>
+
+      <div class="section">
+        <h3>Devices</h3>
+        <div class="dd">
+          <label>Device 1</label>
+          <select>
+            <option>Select Device 1 </option>
+          </select>
+        </div>
+        <div class="dd">
+          <label>Device 2</label>
+          <select>
+            <option>Select Device 2 </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Interfaces</h3>
+        <div class="dd">
+          <label>Device 1</label>
+          <select>
+            <option>Select Interface </option>
+          </select>
+        </div>
+        <div class="dd">
+          <label>Device 2</label>
+          <select>
+            <option>Select Interface </option>
+          </select>
+        </div>
+      </div>
+      <!--#########################################################################################-->
+      <button class="connect-buttonCable" id="connect-deviceCable" onclick="startConnecting()">Connect</button>
+      <button class="delete-buttonCable"  id="delete-deviceCable">Delete</button>
+      <!--#########################################################################################-->
+      <button class="save-buttonCable" id="save">Save</button>
+
+    </div>
+    <!--End of Cable on click-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============================R1====================================== -->
+    <!-- Router 1 on click -->
+    <div class="device-config-container" id="Router-clicked">
+      <h3>Device Name</h3>
+      <div class="input-group">
+        <input type="text" placeholder="Enter Device Name" id="RouterHostName" value="R1">
+      </div>
+      <h3>Interfaces</h3>
+<h5 id="interface-label" value="gigabitethernet0/0">Interface gigabitethernet0/0</h5>
+<div class="network-interface">
+  <select id="interface0" onchange="updateSelectOptions()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/1</h5>
+<div class="network-interface">
+  <select id="interface1" onchange="updateSelectOptions()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/2</h5>
+<div class="network-interface">
+  <select id="interface2" onchange="updateSelectOptions()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+      <button class="button-group" id="Routing-but">Routing</button>
+      <button class="button-group" id="remote-but">Remote Login</button>
+      <br>
+      <button class="button-DHCP" id="DHCP-but">DHCP</button>
+      <button class="delete-button" id="delete-device">Delete</button>
+      <button class="save-button" id="save-form" onclick="generateHostName(),generateIPaddress()">Save</button>
+    </div>
+    <!--End of Router on click-->
+
+
+
+    <!--Router Ospf  -->
+    <div class="Router-Ospf" id="OSPF">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but" onclick="showRoutingForm('OSPF', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but" onclick="showRoutingForm('EIGRP', this)">EIGRP</button>
+      <button class="button-routing" id="static_but" onclick="showRoutingForm('static', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing" id="ospf">Enable OSPF <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button" id="Back">Back</button>
+      <button class="save-button-router" id="save-config" onclick="generateOSPF()">Save</button>
+
+
+    </div>
+    <!--End Router Ospf  -->
+    <!--Router EIGRP  -->
+    <div class="Router-EIGRP" id="EIGRP">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but" onclick="showRoutingForm('OSPF', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but" onclick="showRoutingForm('EIGRP', this)">EIGRP</button>
+      <button class="button-routing" id="static_but" onclick="showRoutingForm('static', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing" id="eigrp">Enable EIGRP<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button" id="Back">Back</button>
+      <button class="save-button-router" id="save-config" onclick="generateEIGRP()">Save</button>
+
+
+    </div>
+    <!-- End Router EIGRP  -->
+
+    <!--Router Static  -->
+    <div class="Router-Static" id="static">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but" onclick="showRoutingForm('OSPF', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but" onclick="showRoutingForm('EIGRP', this)">EIGRP</button>
+      <button class="button-routing" id="static_but" onclick="showRoutingForm('static', this)">Static</button>
+      <br>
+      <h5>Select Number of Static Route</h5>
+      <div class="input-group">
+        <input type="text">
+      </div>
+      <h5>Destination IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <h5>Next Hop IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <br>
+      <button class="Back-button" id="Back">Back</button>
+      <button class="save-button-router" id="save-config">Save</button>
+
+
+    </div>
+    <!-- End Router Static  -->
+
+    <!--Remote login SSH  -->
+    <div class="ssh" id="RemoteLogin">
+
+      <H2>Remote Login</H2>
+      <!-- <button class="button-login" id="SSH-but">SSH </button>
+      <button class="button-login" id="Telnet-but">Telnet</button> -->
+<br>
+<div id="EnableRemoteLogin">
+  <input type="radio" name="remotelogin" id="SSHRadio"><strong>Enable SSH</strong>
+  <pre style="display: inline;">   </pre>
+  <input type="radio" name="remotelogin" id="TelnetRadio"><strong>Enable Telnet</strong>
+</div>
+<br>
+      <br>
+
+      <div class="input-login-rem">
+        <input type="text" placeholder="User Name" id="user_name">
+        <input type="text" placeholder="Password"id="pass">
+      </div>
+      <br>
+      <h5>Line VTY</h5>
+      <div class="input-login-rem">
+        <input type="text" placeholder="From" id="first_number">
+        <input type="text" placeholder="To"id="end_number">
+      </div>
+      <br>
+      <h5>Domain-Name</h5>
+      <div class="input-group">
+        <input type="text" placeholder="Domain-Name" id="domain_name" >
+      </div>
+      <br>
+      <button class="Back-button" id="Back">Back</button>
+      <button class="save-button-router" id="save-config">Save</button>
+
+    </div>
+    <!-- End Remote SSH-->
+
+
+
+
+
+    <!-- Start DHCP-->
+    <div class="DHCP" id="DHCP-form">
+      <h2>DHCP</h2>
+      <br>
+      <input type="checkbox" id="DHCPcheck"><strong> Enable DHCP</strong> 
+      <br>
+      <br>
+      <div class="interface-DHCP">
+        <label>Interface</label>
+        <br>
+        <select id="default-route">
+          <option value="" disabled selected>Select Interface</option>
+          <option value="0">Interface gigabitethernet0/0</option>
+          <option value="1">Interface gigabitethernet0/1</option>
+          <option value="2">Interface gigabitethernet0/2</option>
+        </select>
+      </div>
+      <div class="input-group-DHCP">
+        <label>Pool Name</label>
+        <input type="text" placeholder="Enter Pool Name" id="poolname">
+      <div class="interface-DHCP">
+        <label>Network</label>
+        <select id="networkname">
+          <option value="" disabled selected>Select Network</option>
+          <option value="10.0.0.0 255.0.0.0">10.0.0.0 255.0.0.0</option>
+          <option value="172.168.0.0 255.255.0.0">172.168.0.0 255.255.0.0</option>
+          <option value="10.0.0.0 255.255.0.0">10.0.0.0 255.255.0.0</option>
+          <option value="192.168.1.0 255.255.255.0">192.168.1.0 255.255.255.0</option>
+          <option value="172.168.1.0 255.255.255.0">172.168.1.0 255.255.255.0</option>
+          <option value="10.0.0.0 255.255.255.0">10.0.0.0 255.255.255.0</option>
+          <option value="192.168.1.0 255.255.255.252">192.168.1.0 255.255.255.252</option>
+          <option value="172.168.1.0 255.255.255.252">172.168.1.0 255.255.255.252</option>
+          <option value="10.0.0.0 255.255.255.252">10.0.0.0 255.255.255.252</option>
+        </select>
+      </div>
+        <!-- <label>Domain-Name</label>
+        <input type="text" placeholder="Enter Domain Name" id="domain"> -->
+        <br>
+        <label>DNS-Server</label>
+        <input type="text" placeholder="Enter DNS Server" id="dns">
+      </div>
+
+
+      <button class="Back-button" id="Back">Back</button>
+      <button class="save-button-router" id="save-config">Save</button>
+    </div>
+    <!--End DHCP-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- ================================R2================================================= -->
+    <!-- Router 2 on click -->
+    <div class="device-config-container" id="Router-clicked2">
+      <h3>Device Name</h3>
+      <div class="input-group">
+        <input type="text" placeholder="Enter Device Name" id="RouterHostName2" value="R2">
+      </div>
+      <h3>Interfaces</h3>
+<h5 id="interface02-label" value="gigabitethernet0/0">Interface gigabitethernet0/0</h5>
+<div class="network-interface">
+  <select id="interface02" onchange="updateSelectOptions2()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/1</h5>
+<div class="network-interface">
+  <select id="interface12" onchange="updateSelectOptions2()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/2</h5>
+<div class="network-interface">
+  <select id="interface22" onchange="updateSelectOptions2()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+      <button class="button-group" id="Routing-but2">Routing</button>
+      <button class="button-group" id="remote-but2">Remote Login</button>
+      <br>
+      <button class="button-DHCP" id="DHCP-but2">DHCP</button>
+      <button class="delete-button" id="delete-device2">Delete</button>
+      <button class="save-button" id="save-form2">Save</button>
+    </div>
+    <!--End of Router on click-->
+
+
+
+    <!--Router Ospf  -->
+    <div class="Router-Ospf" id="OSPF2">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but2" onclick="showRoutingForm2('OSPF2', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but2" onclick="showRoutingForm2('EIGRP2', this)">EIGRP</button>
+      <button class="button-routing" id="static_but2" onclick="showRoutingForm2('static2', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing2" id="ospf2">Enable OSPF <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+
+
+    </div>
+    <!--End Router Ospf  -->
+    <!--Router EIGRP  -->
+    <div class="Router-EIGRP" id="EIGRP2">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but2" onclick="showRoutingForm2('OSPF2', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but2" onclick="showRoutingForm2('EIGRP2', this)">EIGRP</button>
+      <button class="button-routing" id="static_but2" onclick="showRoutingForm2('static2', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing2" id="eigrp2">Enable EIGRP<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+
+
+    </div>
+    <!-- End Router EIGRP  -->
+
+    <!--Router Static  -->
+    <div class="Router-Static" id="static2">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but2" onclick="showRoutingForm2('OSPF2', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but2" onclick="showRoutingForm2('EIGRP2', this)">EIGRP</button>
+      <button class="button-routing" id="static_but2" onclick="showRoutingForm2('static2', this)">Static</button>
+      <br>
+      <h5>Select Number of Static Route</h5>
+      <div class="input-group">
+        <input type="text">
+      </div>
+      <h5>Destination IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <h5>Next Hop IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <br>
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+
+
+    </div>
+    <!-- End Router Static  -->
+
+    <!--Remote login SSH  -->
+    <div class="ssh" id="RemoteLogin2">
+
+      <H2>Remote Login</H2>
+      <!-- <button class="button-login" id="SSH-but">SSH </button>
+      <button class="button-login" id="Telnet-but">Telnet</button> -->
+<br>
+<div id="EnableRemoteLogin">
+  <input type="radio" name="remotelogin2" id="SSHRadio2"><strong>Enable SSH</strong>
+  <pre style="display: inline;">   </pre>
+  <input type="radio" name="remotelogin2" id="TelnetRadio2"><strong>Enable Telnet</strong>
+</div>
+<br>
+      <br>
+
+      <div class="input-login-rem">
+        <input type="text" placeholder="User Name" id="user_name2">
+        <input type="text" placeholder="Password"id="pass2">
+      </div>
+      <br>
+      <h5>Line VTY</h5>
+      <div class="input-login-rem">
+        <input type="text" placeholder="From" id="first_number2">
+        <input type="text" placeholder="To"id="end_number2">
+      </div>
+      <br>
+      <h5>Domain-Name</h5>
+      <div class="input-group">
+        <input type="text" placeholder="Domain-Name" id="domain_name2" >
+      </div>
+      <br>
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+
+    </div>
+    <!-- End Remote SSH-->
+
+
+
+    <!--Remote login Telnet  -->
+
+    
+    <div class="telnet" id="telnet2">
+
+      <H2>Remote Login</H2>
+      <button class="button-login" id="SSH-but2">SSH </button>
+      <button class="button-login" id="Telnet-but2">Telnet</button>
+
+      <br>
+
+      <div class="input-login-rem">
+        <input type="text" placeholder="User Name" id="user_telnet12">
+        <input type="text" placeholder="Password" id="pass12">
+      </div>
+      <br>
+      <h5>Line VTY</h5>
+      <div class="input-login-rem">
+        <input type="text" placeholder="From"id="first_numb12">
+        <input type="text" placeholder="To"id="end_numb12">
+      </div>
+      <br> 
+      <h5>Domain-Name</h5>
+      <div class="input-group">
+        <input type="text"id="domain_nam12">
+      </div>
+      <br>
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+
+    </div>
+    <!-- End Remote Telnet  -->
+
+
+    <!-- Start DHCP-->
+    <div class="DHCP" id="DHCP-form2">
+      <h2>DHCP</h2>
+      <br>
+      <input type="checkbox" id="DHCPcheck2"><strong> Enable DHCP</strong> 
+      <br>
+      <br>
+      <div class="interface-DHCP">
+        <label>Interface</label>
+        <br>
+        <select id="default-route2">
+          <option value="" disabled selected>Select Interface</option>
+          <option value="0">Interface gigabitethernet0/0</option>
+          <option value="1">Interface gigabitethernet0/1</option>
+          <option value="2">Interface gigabitethernet0/2</option>
+        </select>
+      </div>
+      <div class="input-group-DHCP">
+        <label>Pool Name</label>
+        <input type="text" placeholder="Enter Pool Name" id="poolname2">
+      <div class="interface-DHCP">
+        <label>Network</label>
+        <select id="networkname2">
+          <option value="" disabled selected>Select Network</option>
+          <option value="10.0.0.0 255.0.0.0">10.0.0.0 255.0.0.0</option>
+          <option value="172.168.0.0 255.255.0.0">172.168.0.0 255.255.0.0</option>
+          <option value="10.0.0.0 255.255.0.0">10.0.0.0 255.255.0.0</option>
+          <option value="192.168.1.0 255.255.255.0">192.168.1.0 255.255.255.0</option>
+          <option value="172.168.1.0 255.255.255.0">172.168.1.0 255.255.255.0</option>
+          <option value="10.0.0.0 255.255.255.0">10.0.0.0 255.255.255.0</option>
+          <option value="192.168.1.0 255.255.255.252">192.168.1.0 255.255.255.252</option>
+          <option value="172.168.1.0 255.255.255.252">172.168.1.0 255.255.255.252</option>
+          <option value="10.0.0.0 255.255.255.252">10.0.0.0 255.255.255.252</option>
+        </select>
+      </div>
+        <!-- <label>Domain-Name</label>
+        <input type="text" placeholder="Enter Domain Name" id="domain"> -->
+        <br>
+        <label>DNS-Server</label>
+        <input type="text" placeholder="Enter DNS Server" id="dns2">
+      </div>
+
+
+      <button class="Back-button2" id="Back2">Back</button>
+      <button class="save-button-router2" id="save-config2">Save</button>
+    </div>
+    <!--End DHCP-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ===================================R3======================================== -->
+    <!-- Router 3 on click -->
+    <div class="device-config-container" id="Router-clicked3">
+      <h3>Device Name</h3>
+      <div class="input-group">
+        <input type="text" placeholder="Enter Device Name" id="RouterHostName3" value="R3">
+      </div>
+      <h3>Interfaces</h3>
+<h5 id="interface3-label" value="gigabitethernet0/0">Interface gigabitethernet0/0</h5>
+<div class="network-interface">
+  <select id="interface03" onchange="updateSelectOptions3()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/1</h5>
+<div class="network-interface">
+  <select id="interface13" onchange="updateSelectOptions3()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+
+<h5>Interface gigabitethernet0/2</h5>
+<div class="network-interface">
+  <select id="interface23" onchange="updateSelectOptions3()">
+    <option value="" disabled selected>Select IP Address</option>
+    <option value="10.0.0.1 255.0.0.0">10.0.0.1 /8</option>
+    <option value="172.168.0.1 255.255.0.0">172.168.0.1 /16</option>
+    <option value="10.0.0.1 255.255.0.0">10.0.0.1 /16</option>
+    <option value="192.168.1.1 255.255.255.0">192.168.1.1 /24</option>
+    <option value="172.168.1.1 255.255.255.0">172.168.1.1 /24</option>
+    <option value="10.0.0.1 255.255.255.0">10.0.0.1 /24</option>
+    <option value="192.168.1.1 255.255.255.252">192.168.1.1 /30</option>
+    <option value="172.168.0.1 255.255.255.252">172.168.0.1 /30</option>
+    <option value="10.0.0.1 255.255.255.252">10.0.0.1 /30</option>
+  </select>
+</div>
+      <button class="button-group" id="Routing-but3">Routing</button>
+      <button class="button-group" id="remote-but3">Remote Login</button>
+      <br>
+      <button class="button-DHCP" id="DHCP-but3">DHCP</button>
+      <button class="delete-button" id="delete-device3">Delete</button>
+      <button class="save-button" id="save-form3">Save</button>
+    </div>
+    <!--End of Router on click-->
+
+
+
+    <!--Router Ospf  -->
+    <div class="Router-Ospf" id="OSPF3">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but3" onclick="showRoutingForm3('OSPF3', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but3" onclick="showRoutingForm3('EIGRP3', this)">EIGRP</button>
+      <button class="button-routing" id="static_but3" onclick="showRoutingForm3('static3', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing3" id="ospf3">Enable OSPF <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+
+
+    </div>
+    <!--End Router Ospf  -->
+    <!--Router EIGRP  -->
+    <div class="Router-EIGRP" id="EIGRP3">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but3" onclick="showRoutingForm3('OSPF3', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but3" onclick="showRoutingForm3('EIGRP3', this)">EIGRP</button>
+      <button class="button-routing" id="static_but3" onclick="showRoutingForm3('static3', this)">Static</button>
+      <br>
+      <input type="radio" name="Routing3" id="eigrp3">Enable EIGRP<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+
+
+    </div>
+    <!-- End Router EIGRP  -->
+
+    <!--Router Static  -->
+    <div class="Router-Static" id="static3">
+
+      <H2>Routing</H2>
+      <button class="button-routing" id="ospf_but3" onclick="showRoutingForm3('OSPF3', this)">OSPF </button>
+      <button class="button-routing" id="eigrp_but3" onclick="showRoutingForm3('EIGRP3', this)">EIGRP</button>
+      <button class="button-routing" id="static_but3" onclick="showRoutingForm3('static3', this)">Static</button>
+      <br>
+      <h5>Select Number of Static Route</h5>
+      <div class="input-group">
+        <input type="text">
+      </div>
+      <h5>Destination IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <h5>Next Hop IP Address</h5>
+      <div class="network-interface">
+        <select>
+          <option value="">Select IP Address</option>
+        </select>
+      </div>
+      <br>
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+
+
+    </div>
+    <!-- End Router Static  -->
+
+    <!--Remote login SSH  -->
+    <div class="ssh" id="RemoteLogin3">
+
+      <H2>Remote Login</H2>
+      <!-- <button class="button-login" id="SSH-but">SSH </button>
+      <button class="button-login" id="Telnet-but">Telnet</button> -->
+<br>
+<div id="EnableRemoteLogin">
+  <input type="radio" name="remotelogin3" id="SSHRadio3"><strong>Enable SSH</strong>
+  <pre style="display: inline;">   </pre>
+  <input type="radio" name="remotelogin3" id="TelnetRadio3"><strong>Enable Telnet</strong>
+</div>
+<br>
+      <br>
+
+      <div class="input-login-rem">
+        <input type="text" placeholder="User Name" id="user_name3">
+        <input type="text" placeholder="Password"id="pass3">
+      </div>
+      <br>
+      <h5>Line VTY</h5>
+      <div class="input-login-rem">
+        <input type="text" placeholder="From" id="first_number3">
+        <input type="text" placeholder="To"id="end_number3">
+      </div>
+      <br>
+      <h5>Domain-Name</h5>
+      <div class="input-group">
+        <input type="text" placeholder="Domain-Name" id="domain_name3" >
+      </div>
+      <br>
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+
+    </div>
+    <!-- End Remote SSH-->
+
+
+
+    <!--Remote login Telnet  -->
+
+    
+    <div class="telnet" id="telnet3">
+
+      <H2>Remote Login</H2>
+      <button class="button-login" id="SSH-but3">SSH </button>
+      <button class="button-login" id="Telnet-but3">Telnet</button>
+
+      <br>
+
+      <div class="input-login-rem">
+        <input type="text" placeholder="User Name" id="user_telnet13">
+        <input type="text" placeholder="Password" id="pass13">
+      </div>
+      <br>
+      <h5>Line VTY</h5>
+      <div class="input-login-rem">
+        <input type="text" placeholder="From"id="first_numb13">
+        <input type="text" placeholder="To"id="end_numb13">
+      </div>
+      <br> 
+      <h5>Domain-Name</h5>
+      <div class="input-group">
+        <input type="text"id="domain_nam13">
+      </div>
+      <br>
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+
+    </div>
+    <!-- End Remote Telnet  -->
+
+
+    <!-- Start DHCP-->
+    <div class="DHCP" id="DHCP-form3">
+      <h2>DHCP</h2>
+      <br>
+      <input type="checkbox" id="DHCPcheck3"><strong> Enable DHCP</strong> 
+      <br>
+      <br>
+      <div class="interface-DHCP">
+        <label>Interface</label>
+        <br>
+        <select id="default-route3">
+          <option value="" disabled selected>Select Interface</option>
+          <option value="0">Interface gigabitethernet0/0</option>
+          <option value="1">Interface gigabitethernet0/1</option>
+          <option value="2">Interface gigabitethernet0/2</option>
+        </select>
+      </div>
+      <div class="input-group-DHCP">
+        <label>Pool Name</label>
+        <input type="text" placeholder="Enter Pool Name" id="poolname3">
+      <div class="interface-DHCP">
+        <label>Network</label>
+        <select id="networkname3">
+          <option value="" disabled selected>Select Network</option>
+          <option value="10.0.0.0 255.0.0.0">10.0.0.0 255.0.0.0</option>
+          <option value="172.168.0.0 255.255.0.0">172.168.0.0 255.255.0.0</option>
+          <option value="10.0.0.0 255.255.0.0">10.0.0.0 255.255.0.0</option>
+          <option value="192.168.1.0 255.255.255.0">192.168.1.0 255.255.255.0</option>
+          <option value="172.168.1.0 255.255.255.0">172.168.1.0 255.255.255.0</option>
+          <option value="10.0.0.0 255.255.255.0">10.0.0.0 255.255.255.0</option>
+          <option value="192.168.1.0 255.255.255.252">192.168.1.0 255.255.255.252</option>
+          <option value="172.168.1.0 255.255.255.252">172.168.1.0 255.255.255.252</option>
+          <option value="10.0.0.0 255.255.255.252">10.0.0.0 255.255.255.252</option>
+        </select>
+      </div>
+        <!-- <label>Domain-Name</label>
+        <input type="text" placeholder="Enter Domain Name" id="domain"> -->
+        <br>
+        <label>DNS-Server</label>
+        <input type="text" placeholder="Enter DNS Server" id="dns3">
+      </div>
+
+
+      <button class="Back-button3" id="Back3">Back</button>
+      <button class="save-button-router3" id="save-config3">Save</button>
+    </div>
+    <!--End DHCP-->
+
+<!-- =======================End========================== -->
+    
+
+    <div>
+        <img src="./imgs/1 3.png" alt="" class="logo">
+      <button class="btn1" id="Simulation">Simulation</button>
+      <button class="btn2" id="Configuration" data-modal-target="#ConfOut">Configuration</button>
+    </div>
+
+
+    <button style="display: none;" data-modal-target="#modal">Open Modal</button>
+    <div class="modal" id="modal" style="padding: 5px;">
+      <div class="border1">
+      <div class="modal-header">
+        <div class="title">Recommendation</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        For the best user experience, we recommend opening this page 
+        on a laptop or PC screen with a resolution of
+        "1920x1080". Viewing on a mobile phone might affect the layout and performance
+      </div>
+    </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- ============================================== -->
+    <div class="modal" id="ConfOut">
+      <div class="border1" style="background-color: white;">
+      <div class="modal-header">
+        <div class="title">Configuration Output</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <center>
+          <div style="display: flex; justify-content: center; align-items: center;" id="pickRouter">
+              <div style="text-align: center; margin: 0px 30px;">
+                  <h5 class="R1t">R1</h5>
+                  <img src="./imgs/router 1.png" alt="router" class="R1" draggable="false" id="outrouter1">
+              </div>
+              <div style="text-align: center; margin: 0px 30px;">
+                  <h5 class="R2t">R2</h5>
+                  <img src="./imgs/router 1.png" alt="router" class="R2" draggable="false" id="outrouter2">
+              </div>
+              <div style="text-align: center; margin: 0px 30px;">
+                  <h5 class="R3t">R3</h5>
+                  <img src="./imgs/router 1.png" alt="router" class="R3" draggable="false" id="outrouter3">
+              </div>
+          </div>
+      </center>      
+          <button id="leftArrowBtn" style="font-size: 20px; cursor: pointer;">&larr; Back</button> 
+          <br><br>
+          <table border="1px"  id="Output">
+            
+            <tr>
+              <th>
+                HostName and IPs
+            </th>
+            <th>
+              Remote Login
+            </th>
+            <th>
+                DHCP
+            </th>
+            <th>
+              Routing Protocal
+            </th>
+            <th>
+              All-In-One
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText1"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText2"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText3"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText4"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button  class="copyButton" id="copyButton">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton1">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton1">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton2">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton2">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton3">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton3">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton4">Copy All</button>
+              <button class="DownloadButton" id="DownloadButton4">Download All</button>
+            </td>
+          </tr>
+        </table>
+          <table border="1px"  id="Output2">
+          <tr>
+            <th>
+              HostName and IPs
+            </th>
+            <th>
+                Remote Login
+              </th>
+            <th>
+                DHCP
+            </th>
+            <th>
+                Routing Protocal
+            </th>
+            <th>
+               All-In-One
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText5"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText6"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText7"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText8"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText9"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="copyButton" id="copyButton5">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton5">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton6">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton6">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton7">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton7">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton8">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton8">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton9">Copy All</button>
+              <button class="DownloadButton" id="DownloadButton9">Download All</button>
+            </td>
+          </tr>
+          </table>
+          <table border="1px" id="Output3">
+          <tr>
+            <th>
+                HostName and IPs
+            </th>
+            <th>
+                Remote Login
+            </th>
+            <th>
+                DHCP
+            </th>
+            <th>
+                Routing Protocal
+            </th>
+            <th>
+               All-In-One
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText10"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText11"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText12"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText13"></textarea>
+            </td>
+            <td>
+              <textarea cols="80" rows="10" id="ConfOutText14"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="copyButton" id="copyButton10">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton10">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton11">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton11">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton12">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton12">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton13">Copy Configuration</button>
+              <button class="DownloadButton" id="DownloadButton13">Download Configuration</button>
+            </td>
+            <td>
+              <button class="copyButton" id="copyButton14">Copy All</button>
+              <button class="DownloadButton" id="DownloadButton14">Download All</button>
+            </td>
+          </tr>
+          </table>
+        </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    
+  </div>
+  
+    <script src="./JS/new_project.js"></script>
+</body>
+
+</html>
+
+

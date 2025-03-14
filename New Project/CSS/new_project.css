@@ -1,0 +1,758 @@
+.selected {
+    border: 2px solid white;
+}
+
+.line {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    transform-origin: left center;
+}
+
+
+
+/*########################################################################################################*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #2F25D8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.header::before,
+.header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 43%;
+    height: 2px;
+    background: white;
+}
+
+.header::before {
+    left: 1%;
+}
+
+.header::after {
+    right: 1%;
+}
+
+.span1 {
+    font-weight: bold;
+    color: #0a3057;
+}
+
+.span2 {
+    font-weight: bold;
+    color: cyan;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.rectangle6 {
+    position: absolute;
+    left: 0;
+    margin-top: -30px;
+    height: 8px;
+}
+
+.rectangle7 {
+    position: absolute;
+    left: 0;
+    height: 8px;
+}
+
+.rectangle8 {
+    position: absolute;
+    left: 0;
+    margin-top: 30px;
+    height: 8px;
+}
+
+.rectangle66 {
+    position: absolute;
+    right: 0;
+    margin-top: -30px;
+    height: 8px;
+}
+
+.rectangle77 {
+    position: absolute;
+    right: 0;
+    height: 8px;
+}
+
+.rectangle88 {
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+    height: 8px;
+}
+
+.device {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+#pickRouter {
+    display: flex;
+    justify-content: center;   /* Centers the items horizontally */
+    align-items: center;       /* Centers the items vertically */
+    flex-direction: row;       /* Makes sure the items are aligned horizontally */
+}
+
+.R1, .R2, .R3 {
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    display: inline;
+}
+
+#pickRouter > div {
+    text-align: center;
+    margin: 0px 30px;
+}
+
+.cable-img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.workspace {
+    position: relative;
+    width: 99.7%;
+    height: 550PX;
+    border: 2px solid #2c2cb3;
+    background: white;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+}
+
+
+.btn1,
+.btn2 {
+    position: absolute;
+    bottom: 10px;
+    background-color: #00A6EC;
+    color: black;
+    border-radius: 20px;
+    padding: 7px 10px;
+    border: none;
+    width: auto;
+    min-width: 100px;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+.btn1 {
+    right: 160px;
+}
+
+.btn2 {
+    right: 10px;
+}
+
+.Cable-on-click {
+    background-color: rgb(239, 235, 235);
+    padding: 20px;
+    border-radius: 8px;
+    width:22%;
+    max-width: 400px;
+    margin-left: 75%;
+    display: none;
+    height: 540PX;
+    padding-right: 10PX;
+}
+
+.Cable-on-click h2 {
+    text-align: center;
+    margin-bottom: 7px;
+    color: black;
+    padding-bottom: 7px;
+    margin-top: 2px;
+}
+
+.Cable-on-click h3 {
+    margin-bottom: 10px;
+    color: black;
+    padding-bottom: 8px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.dd {
+    margin-bottom: 10px;
+}
+
+.dd label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    padding-left: 40px;
+}
+
+.dd select {
+    margin-left: 40px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: gray;
+}
+
+.save-button {
+    background-color: #007bff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 92%;
+    font-size: 15px;
+    margin:0 auto;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+.save-buttonCable {
+    background-color: #007bff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 95%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.save-buttonCable:hover {
+    background-color: #0056b3;
+}
+
+.device-config-container{
+    background-color: rgb(239, 235, 235);
+    padding: 20px;
+    border-radius: 8px;
+    width:22%;
+    max-width: 400px;
+    margin-left: 75%;
+    display: none;
+}
+.device-config-container h5{
+    margin-bottom: 2px;
+    color: black;
+    padding-bottom: 4px;
+}
+.device-config-container h3{
+    margin-bottom: 2px;
+    color: black;
+    padding-bottom: 2px;
+    text-align: center;
+}
+.network-interface select,.input-group [type="text"] ,.interface-DHCP select , .input-group-DHCP  [type="text"]{
+    width: 80%;
+    padding: 10px ;
+    margin-bottom: 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(177, 175, 175);
+    text-align: center;
+}
+.input-group ::placeholder ,.input-login-rem ::placeholder , .input-group-DHCP ::placeholder{
+    color: black; 
+    text-align: center;
+}
+.button-DHCP , .button-group {
+    background-color: #007bff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 150px;
+    font-size: 15px;
+    margin-bottom: 4PX;
+    margin-top: 4PX;
+}
+.button-routing , .button-login{
+    background-color: #007bff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 15px;
+    margin-bottom: 4PX;
+    margin-top: 4PX;
+}
+.button-DHCP:hover , .button-group:hover  , .button-routing:hover  , .save-button-OSPF:hover , .Back-button-DHCP:hover,.save-button-DHCP:hover,.Back-button-remote:hover,.save-button-remote:hover,.button-login:hover{
+    background-color: #0056b3;
+}
+.Router-Ospf , .Router-EIGRP , .Router-Static , .ssh , .telnet ,.DHCP{
+    background-color: rgb(239, 235, 235);
+    padding: 20px;
+    border-radius: 8px;
+    width:22%;
+    max-width: 450px;
+    margin-left: 75%;
+    height: 540PX;
+    padding-right: 10PX;  
+    display: none; 
+    position: relative;
+}
+.Router-Ospf h2 , .Router-EIGRP h2 , .Router-Static h2 , .ssh h2 , .DHCP h2{
+    text-align: center;
+}
+
+.button-routing{
+    margin-left: 5px;
+    margin-bottom: 40px;
+}
+.input-login-rem [type="text"]{
+    width: 40%;
+    padding: 10px ;
+    margin-bottom: 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(181, 179, 179);
+}
+.button-login{
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+.interface-DHCP select   {
+    margin-bottom: 20px;
+    width: 85%;
+
+}
+.input-group-DHCP  [type="text"]{
+    margin-bottom: 17px;
+}
+button :hover{
+    background-color: #0056b3;
+}
+
+/* Back Button*/
+.Back-button:hover , .save-button-router:hover{
+    background-color: #0056b3;
+}
+.Back-button,.save-button-router{
+background-color: #007bff;
+color: black;
+padding: 10px 15px;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+width: 100px;
+font-size: 15px;
+margin-left: 11% ;
+position: relative;
+}
+/* Back Button*/
+.Back-button2:hover , .save-button-router2:hover{
+    background-color: #0056b3;
+}
+.Back-button2,.save-button-router2{
+background-color: #007bff;
+color: black;
+padding: 10px 15px;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+width: 100px;
+font-size: 15px;
+margin-left: 11% ;
+position: relative;
+}
+/* Back Button*/
+.Back-button3:hover , .save-button-router3:hover{
+    background-color: #0056b3;
+}
+.Back-button3,.save-button-router3{
+background-color: #007bff;
+color: black;
+padding: 10px 15px;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+width: 100px;
+font-size: 15px;
+margin-left: 11% ;
+position: relative;
+}
+
+/* Button Text Color Changes when Clicked */
+
+/* Basic button styling */
+.button-routing {
+    background-color: #007bff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 15px;
+    margin-bottom: 4PX;
+    margin-top: 4PX;
+    transition: color 0.3s ease;
+}
+
+/* Active state: button clicked */
+.button-routing:active,
+.button-routing:focus {
+    color: white;
+}
+
+/* Reset color for other buttons if not active/focused */
+#ospf_bu:not(:active),
+#eigrp_but:not(:active),
+#static_but:not(:active) {
+    color: black;
+}
+
+/* Optional: Hover effect */
+.button-routing:hover {
+    background-color: #0056b3;
+}
+
+/* Add custom styles to ensure focus works well */
+/* #ospf_but:focus,
+#eigrp_but:focus,
+#static_but:focus {
+    color: white;
+} */
+
+/* For buttons that are not focused or active, ensure the color is reset */
+/* #ospf_but:not(:focus):not(:active),
+#eigrp_but:not(:focus):not(:active),
+#static_but:not(:focus):not(:active) { */
+    /* color: black;  */
+    /* } */
+    /* Default color */
+
+
+    .delete-button {
+        background-color: #ff4d4d; /* Red color for delete */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 45%;
+        font-size: 15px;
+        position: relative;
+}
+    
+    .delete-button:hover {
+        background-color: #cc0000; /* Darker red on hover */
+    }
+/*########################################################################################################*/
+    .connect-buttonCable {
+        background-color: #007bff;
+        color: black;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 45%;
+        font-size: 15px;
+        margin-top: 0px;
+        margin-left: 10px;
+        display: inline;
+    }
+/*########################################################################################################*/
+    .delete-buttonCable {
+        background-color: #ff4d4d; /* Red color for delete */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 45%;
+        font-size: 15px;
+        position: relative;
+        margin-top: 0px;
+        margin-left: 10px;
+        display: inline;
+}
+    
+    .delete-buttonCable:hover {
+        background-color: #cc0000; /* Darker red on hover */
+    }
+
+
+      
+
+#EnableRemoteLogin{
+    padding: 10px;
+    margin: auto0 auto;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* The hover-list container */
+  .hover-list {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the main image */
+    left: 50%; /* Center align */
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: -10px;
+    padding-bottom: -10px;
+    z-index: 10;
+  }
+  
+  /* Show the hover list on hover */
+  .container:hover .hover-list {
+    display: flex;
+    flex-direction: row; /* Arrange images in a horizontal row */
+    gap: 1px; /* Add spacing between images */
+  }
+  
+  /* Style for the hover list images */
+  .hover-list img {
+    width: 100px; /* Set default width */
+    height: 100px; /* Set default height */
+    object-fit: cover; /* Ensure the image fits within the square */
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+  
+  /* Adjust width and height when hovering over the list */
+  .container:hover .hover-list img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Add a hover effect to the images in the list */
+  .hover-list img:hover {
+    transform: scale(1.2);
+  }
+
+ 
+
+
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 800px;
+    max-width: 80%;
+    height: auto;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  .modal::before, .modal::after {
+    content: '';
+    position: absolute;
+    height: 100%; 
+    width:100%; 
+    top: -3px; /* Half of border width */
+    left: -3px; /* Half of border width */
+    background-image: conic-gradient(
+  from var(--angle),
+   /* Soft pink */
+  #fff, /* Vibrant pink */
+  #4000ffb1, /* Bright yellow */
+  #fff, /* Green */
+  #fff, /* Purple */
+  #ffd83be6,
+  #fff
+);
+
+    border-radius: 12px; /* Match modal radius + border */
+    z-index: -1;
+    animation: spin 4s linear infinite;
+  }
+  
+  .modal::before {
+    filter: blur(5rem);
+    opacity: .8;
+  }
+  
+  .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(198, 24, 24);
+  }
+  
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 30px 15px;
+    color: black;
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+
+  .border1{
+    background-color: white;
+    border-radius: 1px;
+}
+
+#ConfOut .modal-body {
+    max-height: 500px; /* Set a max height for the modal body */
+    overflow-y: auto;  /* Enable vertical scrolling if content exceeds max-height */
+  }
+  
+  #ConfOutText,#ConfOutText1,#ConfOutText2,#ConfOutText3,#ConfOutText4 {
+    word-wrap: break-word; /* Optional: Wrap words to prevent long text from breaking layout */
+  }
+
+  textarea {
+    width: 100%; /* Make it responsive */
+    box-sizing: border-box; /* Ensures padding doesn't affect width calculation */
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds the set height */
+    word-wrap: break-word; /* Ensures long words break and wrap in the textarea */
+  }
+
+  table{
+    border: rgb(6, 18, 236) 3px solid;
+    border-collapse: collapse;
+  }
+
+  th{
+    padding: 2px;
+  }
+  td{
+    padding: 2px;
+    align-items: center;
+  }
+
+  .copyButton{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 1 black solid;
+    color: black;
+    transition: all;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+  }
+  .copyButton:hover {
+    width: 100%;
+    height: 50px;
+    border: 1px black solid;
+    background-color: #2573d8;
+    color:white;
+}
+
+  .DownloadButton{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 1 black solid;
+    color: black;
+    transition: all;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+
+  }
+
+  .DownloadButton:hover{
+    width: 100%;
+    height: 50px;
+    border: 1px black solid;
+    background-color: #2573d8;
+    color:white;
+        }
